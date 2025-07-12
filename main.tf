@@ -58,6 +58,7 @@ resource "google_cloud_run_v2_service" "kassandra_engine_service" {
     service_account = google_service_account.service_account.email
     scaling {
       min_instance_count = 1
+      max_instance_count = 5
     }
     containers {
       image = "us-docker.pkg.dev/cloudrun/container/hello"
